@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Mobile{% endblock title %}
+{% block main-content %}
+ 
+<div class="container my-5">
+ <div class="row my-2">
+
+   {% for m in mobiles %}
+<div class="card product_card" style="width: 19rem;
+    margin: 20px;">
+  <img src="{{m.product_image.url}}
+" class="card-img-top" alt="{{m.id}}"height="250px" width="350px"> <br>
+  <div class="card-body">
+    <h5 class="card-title">{{m.title}}
+</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+  {% comment %} <button type="submit" class="btn btn-danger shadow px-5" href="{% url 'buy_now' %}" >Buy Now</button> {% endcomment %}
+     <a class="btn btn-danger shadow px-5 py-2 ms-4" href="{% url 'buy_now' %}">Buy Now</a>
+
+ {% comment %} <form action="/add-to-cart" class="d-inline">
+  <input type="hidden" name="prod_id" value= {{m.id}} id="prod_id">
+  <button type="submit" class="btn btn-danger shadow px-5">Buy Now</button>
+  </form> {% endcomment %}
+    </div>
+</div>
+   {% endfor %}   
+   
+ </div>
+</div>
+{% endblock main-content %}

@@ -1,0 +1,7 @@
+
+{% comment %} iss code se navbaar ka jo cart h naa whaa no of product add h naa wo change hogaa har page par ..soo basically aapko har class yaa def function ke ander isko likna hogaa.......jhaa jhaa ye likha hogaa ussi page par cart ki product value cha ge hogi.....{% endcomment %}
+totalitem =0
+if request.user.is_authenticated:
+            totalitem = len(Cart.objects.filter(user=request.user))
+return render(request, 'app/home.html' ,{ 'laptops':laptops, 'randoms':randoms, 'topwears':topwears ,'bottomwears':bottomwears , 'mobiles':mobiles , 'totalitem':totalitem})
+

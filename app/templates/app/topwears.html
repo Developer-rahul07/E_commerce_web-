@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Top Wears{% endblock title %}
+{% block main-content %}
+
+<div class="container my-5">
+ <div class="row my-2">
+
+   {% for t in topwears %}
+<div class="card product_card" style="width: 19rem;
+    margin: 20px;">
+  <img src="{{t.product_image.url}}
+" class="card-img-top" alt="{{t.id}}"height="250px" width="350px"> <br>
+  <div class="card-body">
+    <h5 class="card-title">{{t.title}}
+</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+ <form action="/add-to-cart" class="d-inline">
+  <input type="hidden" name="prod_id" value= {{product.id}} id="prod_id">
+  <button type="submit" class="btn btn-danger shadow px-5">Buy Now</button>
+  </form>
+    </div>
+</div>
+   {% endfor %}   
+   
+ </div>
+</div>
+{% endblock main-content %}
