@@ -125,7 +125,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # LOGIN_REDIRECT_URL = '/profile/'
 LOGIN_REDIRECT_URL = '/'
 # deploy karne se phele ye email wali hatani h
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SEESION_ENIGINE = "django.contrib.session.backends.db"
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
